@@ -742,8 +742,8 @@ bool PDU::parse()
         return false;
     }
     
-    if (!parseSMSC())
-        return false;
+    // if (!parseSMSC())
+    //    return false;
     
     if (strlen(m_pdu_ptr) < 2)
     {
@@ -1456,7 +1456,7 @@ void PDU::generate()
             sprintf(m_pdu, "%02X%s%s", (int)strlen(tmp_smsc) / 2 + 1, 
                     (tmp_smsc[1] == '0') ? "81": "91", tmp_smsc);
         else
-            strcpy(m_pdu, "00");
+            strcpy(m_pdu, "\0");
         
         smsc_len = strlen(m_pdu);
         
