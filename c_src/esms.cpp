@@ -191,7 +191,7 @@ static ERL_NIF_TERM encode_nif(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv
     goto EERR;
   }
   //default values
-  pdu.setSMSC("123");
+  // pdu.setSMSC("123");
   pdu.setNumber("123");
   pdu.setAlphabet (PDU::UCS2);
 
